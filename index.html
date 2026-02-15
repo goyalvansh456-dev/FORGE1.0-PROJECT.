@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HostelFlow</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+    <!-- Page 1 - Welcome -->
+    <div id="page1" class="page active">
+        <h1>🏠 Welcome to HostelOps</h1>
+        <p>Your Smart Hostel Maintenance System</p>
+        <button onclick="goToPage(2)">Next</button>
+    </div>
+
+    <!-- Page 2 - Intro -->
+    <div id="page2" class="page">
+        <h1>Facing an Issue in Hostel?</h1>
+        <p>Let's get your issues fixed.</p>
+
+        <div class="btn-group">
+            <button onclick="goToPage(1)" class="back-btn">Back</button>
+            <button onclick="goToPage(3)">Next</button>
+        </div>
+    </div>
+
+    <!-- Page 3 - Complaint Form -->
+    <div id="page3" class="page">
+        <h1>What is your problem?</h1>
+
+        <form action="/submit" method="POST">
+
+            <input type="text" placeholder="Your Name" name="name" required>
+            <input type="text" placeholder="Room Number" name="room" required>
+
+            <select required>
+                <option value="">Select Issue Type</option>
+                <option>Electrical</option>
+                <option>Plumbing</option>
+                <option>WiFi</option>
+                <option>Furniture</option>
+                <option>Other</option>
+            </select>
+
+            <textarea placeholder="Describe your problem..." required></textarea>
+
+            <div class="btn-group">
+                <button type="button" onclick="goToPage(2)" class="back-btn">Back</button>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

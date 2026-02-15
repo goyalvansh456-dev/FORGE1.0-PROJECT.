@@ -1,0 +1,122 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #0f172a, #1e293b);
+    color: #1f2937;
+}
+
+/* Card Container */
+.page {
+    display: none;
+    width: 420px;
+    padding: 50px 40px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: slideFade 0.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Page 1 Specific Styling */
+#page1 h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+#page1 p {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+button {
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Primary Button */
+button:not(.back-btn) {
+    background: #2563eb;
+    color: white;
+}
+
+button:not(.back-btn):hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+}
+
+/* Back Button */
+.back-btn {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.back-btn:hover {
+    background: #d1d5db;
+}
+
+/* Form Styling */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Button Group */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Animation */
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
